@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN!
 const GITHUB_OWNER = process.env.GITHUB_OWNER ?? 'agency45tools'
 const GITHUB_REPO = process.env.GITHUB_REPO ?? 'kaminhall-feed'
-const GITHUB_FILE_PATH = 'offers.json'
+const GITHUB_FILE_PATH = 'public/offers.json'
 const GITHUB_BRANCH = process.env.GITHUB_BRANCH ?? 'main'
 
 export async function POST(req: NextRequest) {
