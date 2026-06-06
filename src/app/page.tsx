@@ -359,7 +359,7 @@ export default function Home() {
           <table className="w-full text-sm border-collapse">
             <thead>
               <tr className="border-b border-neutral-800">
-                {['Код', 'Артикул', 'Бренд', 'Назва', 'Ціна', 'Акц. ціна', 'Залишок', 'Наявність', 'Дж.'].map((h) => (
+                {['Код', 'Артикул', 'Бренд', 'Назва', 'Ціна', 'Стара ціна', 'Залишок', 'Наявність', 'Дж.'].map((h) => (
                   <th key={h} className="px-3 py-2.5 text-left text-xs font-medium text-neutral-500 whitespace-nowrap bg-neutral-900/80">
                     {h}
                   </th>
