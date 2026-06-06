@@ -165,8 +165,8 @@ export function parseBroilKingExcel(rows: (string | number | null)[][]): ExcelRo
     if (brand !== 'Broil King') continue
     if (!vendorCode || String(vendorCode).trim() === '') continue
 
-    const priceRaw = row[4]
-    const stockRaw = row[5]
+    const stockRaw = row[4]
+    const priceRaw = row[5]
 
     const price = typeof priceRaw === 'number' ? priceRaw : parseFloat(String(priceRaw ?? '0'))
     if (!price) continue
