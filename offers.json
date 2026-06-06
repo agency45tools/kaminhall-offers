@@ -1,6 +1,6 @@
 {
   "total": 88,
-  "updatedAt": "2026-06-06T21:28:35Z",
+  "updatedAt": "2026-06-06T21:33:33Z",
   "data": [
     {
       "code": "W1-001",
@@ -553,7 +553,7 @@
       "price": 679,
       "old_price": null,
       "availability": true,
-      "stock": 5,
+      "stock": 10,
       "warranty_type": "manufacturer",
       "warranty_period": 12,
       "days_to_dispatch": 1,
@@ -583,7 +583,7 @@
       "warehouses": [
         {
           "id": "WH-01",
-          "stock": 5
+          "stock": 10
         }
       ]
     },
