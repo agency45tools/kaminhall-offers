@@ -1,0 +1,2619 @@
+{
+  "total": 67,
+  "updatedAt": "2026-06-06T20:26:09Z",
+  "data": [
+    {
+      "code": "AG-150",
+      "price": 6990,
+      "old_price": null,
+      "availability": true,
+      "stock": 7,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 7
+        }
+      ]
+    },
+    {
+      "code": "AG-152",
+      "price": 7990,
+      "old_price": null,
+      "availability": true,
+      "stock": 4,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 4
+        }
+      ]
+    },
+    {
+      "code": "AG-153",
+      "price": 8290,
+      "old_price": null,
+      "availability": true,
+      "stock": 4,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 4
+        }
+      ]
+    },
+    {
+      "code": "AG-154",
+      "price": 7390,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-155",
+      "price": 2690,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-156",
+      "price": 3790,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-157",
+      "price": 6590,
+      "old_price": null,
+      "availability": true,
+      "stock": 9,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 9
+        }
+      ]
+    },
+    {
+      "code": "AG-158",
+      "price": 3290,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-161",
+      "price": 890,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-162",
+      "price": 1290,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-163",
+      "price": 1990,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-165",
+      "price": 1290,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-164",
+      "price": 2990,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-166",
+      "price": 890,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "CA",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-167",
+      "price": 7690,
+      "old_price": null,
+      "availability": true,
+      "stock": 1,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 1
+        }
+      ]
+    },
+    {
+      "code": "AG-170",
+      "price": 950,
+      "old_price": null,
+      "availability": true,
+      "stock": 2,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 2
+        }
+      ]
+    },
+    {
+      "code": "AG-171",
+      "price": 6190,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-172",
+      "price": 3790,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-173",
+      "price": 890,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-174",
+      "price": 2050,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-175",
+      "price": 2790,
+      "old_price": null,
+      "availability": true,
+      "stock": 6,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 6
+        }
+      ]
+    },
+    {
+      "code": "AG-176",
+      "price": 1290,
+      "old_price": null,
+      "availability": true,
+      "stock": 2,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 2
+        }
+      ]
+    },
+    {
+      "code": "AG-177",
+      "price": 4190,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-178",
+      "price": 2390,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-180",
+      "price": 6190,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-181",
+      "price": 890,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-182",
+      "price": 3990,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-183",
+      "price": 2790,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-186",
+      "price": 890,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-187",
+      "price": 2390,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-188",
+      "price": 5290,
+      "old_price": null,
+      "availability": true,
+      "stock": 6,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 6
+        }
+      ]
+    },
+    {
+      "code": "AG-189",
+      "price": 1290,
+      "old_price": null,
+      "availability": true,
+      "stock": 7,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 7
+        }
+      ]
+    },
+    {
+      "code": "AG-190",
+      "price": 3990,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-191",
+      "price": 3390,
+      "old_price": null,
+      "availability": true,
+      "stock": 4,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 4
+        }
+      ]
+    },
+    {
+      "code": "AG-192",
+      "price": 4990,
+      "old_price": null,
+      "availability": true,
+      "stock": 7,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 7
+        }
+      ]
+    },
+    {
+      "code": "AG-193",
+      "price": 4790,
+      "old_price": null,
+      "availability": true,
+      "stock": 4,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 4
+        }
+      ]
+    },
+    {
+      "code": "AG-194",
+      "price": 5490,
+      "old_price": null,
+      "availability": true,
+      "stock": 3,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 3
+        }
+      ]
+    },
+    {
+      "code": "AG-195",
+      "price": 6890,
+      "old_price": null,
+      "availability": true,
+      "stock": 4,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 4
+        }
+      ]
+    },
+    {
+      "code": "AG-196",
+      "price": 5690,
+      "old_price": null,
+      "availability": true,
+      "stock": 2,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 2
+        }
+      ]
+    },
+    {
+      "code": "AG-197",
+      "price": 5290,
+      "old_price": null,
+      "availability": true,
+      "stock": 4,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 4
+        }
+      ]
+    },
+    {
+      "code": "AG-198",
+      "price": 3190,
+      "old_price": null,
+      "availability": true,
+      "stock": 5,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 5
+        }
+      ]
+    },
+    {
+      "code": "AG-200",
+      "price": 5490,
+      "old_price": null,
+      "availability": true,
+      "stock": 5,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 5
+        }
+      ]
+    },
+    {
+      "code": "AG-201",
+      "price": 5990,
+      "old_price": null,
+      "availability": true,
+      "stock": 2,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 2
+        }
+      ]
+    },
+    {
+      "code": "AG-202",
+      "price": 890,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-203",
+      "price": 990,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-204",
+      "price": 1290,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-205",
+      "price": 590,
+      "old_price": null,
+      "availability": true,
+      "stock": 4,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 4
+        }
+      ]
+    },
+    {
+      "code": "AG-206",
+      "price": 490,
+      "old_price": null,
+      "availability": true,
+      "stock": 7,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 7
+        }
+      ]
+    },
+    {
+      "code": "AG-207",
+      "price": 690,
+      "old_price": null,
+      "availability": true,
+      "stock": 1,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 1
+        }
+      ]
+    },
+    {
+      "code": "AG-208",
+      "price": 1790,
+      "old_price": null,
+      "availability": true,
+      "stock": 8,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "code": "AG-209",
+      "price": 590,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-210",
+      "price": 1690,
+      "old_price": null,
+      "availability": true,
+      "stock": 8,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 8
+        }
+      ]
+    },
+    {
+      "code": "AG-211",
+      "price": 1290,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-212",
+      "price": 1790,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-213",
+      "price": 1290,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-214",
+      "price": 1790,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-215",
+      "price": 2290,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-216",
+      "price": 1290,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-217",
+      "price": 2490,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-218",
+      "price": 1990,
+      "old_price": null,
+      "availability": true,
+      "stock": 4,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 4
+        }
+      ]
+    },
+    {
+      "code": "AG-219",
+      "price": 7390,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-220",
+      "price": 2190,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-221",
+      "price": 1690,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-222",
+      "price": 1090,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-223",
+      "price": 1290,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-224",
+      "price": 1090,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    },
+    {
+      "code": "AG-225",
+      "price": 1290,
+      "old_price": null,
+      "availability": true,
+      "stock": 10,
+      "warranty_type": "manufacturer",
+      "warranty_period": 12,
+      "days_to_dispatch": 1,
+      "max_pay_in_parts": 12,
+      "delivery_methods": [
+        {
+          "method": "nova-post:branch",
+          "price": 0
+        },
+        {
+          "method": "nova-post:postomat",
+          "price": 0
+        },
+        {
+          "method": "nova-post:cargo_branch",
+          "price": 0
+        },
+        {
+          "method": "courier:nova-post",
+          "price": 0
+        }
+      ],
+      "manufacture": {
+        "country_code": "US",
+        "year": null
+      },
+      "warehouses": [
+        {
+          "id": "WH-01",
+          "stock": 10
+        }
+      ]
+    }
+  ]
+}
