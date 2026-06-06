@@ -127,7 +127,7 @@ export function parseWeberExcel(rows: (string | number | null)[][]): ExcelRow[] 
 
     const priceRaw = row[3]
     const salePriceRaw = row[4]
-    const priceRaw = row[5]
+    const stockRaw = row[5]
 
     const basePrice = typeof priceRaw === 'number' ? priceRaw : parseFloat(String(priceRaw ?? '0'))
     const salePrice = typeof salePriceRaw === 'number' ? salePriceRaw
@@ -165,8 +165,8 @@ export function parseBroilKingExcel(rows: (string | number | null)[][]): ExcelRo
     if (brand !== 'Broil King') continue
     if (!vendorCode || String(vendorCode).trim() === '') continue
 
-    const stockRaw = row[4]
-    const priceRaw = row[5]
+    const priceRaw = row[4]
+    const stockRaw = row[5]
 
     const price = typeof priceRaw === 'number' ? priceRaw : parseFloat(String(priceRaw ?? '0'))
     if (!price) continue
