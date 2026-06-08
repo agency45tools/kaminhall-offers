@@ -129,7 +129,8 @@ export default function Home() {
         const offersRes = await fetch('https://kaminhall-feed.vercel.app/offers.json?t=' + Date.now())
         if (offersRes.ok) {
           const offersData = await offersRes.json()
-          const offersMap = new Map(offersData.data.map((o: {code: string, price: number, old_price: number|null, stock: number, availability: boolean}) => [o.code, o]))
+          type OfferEntry = {code: string, price: number, old_price: number|null, stock: number, availability: boolean}
+          const offersMap = new Map<string, OfferEntry>(offersData.data.map((o: OfferEntry) => [o.code, o]))
           items.forEach((item) => {
             const offer = offersMap.get(item.code)
             if (offer) {
