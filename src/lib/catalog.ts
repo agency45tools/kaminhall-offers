@@ -190,16 +190,30 @@ export function parseBroilKingExcel(rows: (string | number | null)[][]): ExcelRo
  */
 export function mergeExcelIntoCatalog(
   catalog: CatalogItem[],
-  excelRows: ExcelRow[]
+  excelRows: ExcelRow[],
+  vendor: 'broil-king' | 'weber'
 ): { items: CatalogItem[]; matchedCount: number; unmatchedCodes: string[] } {
   const excelMap = new Map<string, ExcelRow>()
   excelRows.forEach((r) => excelMap.set(String(r.vendor_code), r))
 
+  const brandName = vendor === 'broil-king' ? 'Broil King' : 'Weber'
   const unmatchedCodes: string[] = []
   let matchedCount = 0
 
   const items = catalog.map((item) => {
     const match = excelMap.get(item.vendor_code)
+
+    // If item belongs to this brand but not in Excel — zero out stock
+    if (!match && item.brand === brandName) {
+      const changed = item.stock !== 0 || item.price !== null
+      return {
+        ...item,
+        stock: 0,
+        availability: false,
+        changed,
+      }
+    }
+
     if (!match) return { ...item, changed: false }
 
     matchedCount++

@@ -171,7 +171,7 @@ export default function Home() {
         excelRows = parseBroilKingExcel(rows as (string | number | null)[][])
       }
 
-      const { items, matchedCount } = mergeExcelIntoCatalog(catalog, excelRows)
+      const { items, matchedCount } = mergeExcelIntoCatalog(catalog, excelRows, vendor)
       setCatalog(items)
       setUploadStats((prev) => {
         const filtered = prev.filter((s) => s.vendor !== (vendor === 'weber' ? 'Weber' : 'Broil King'))
