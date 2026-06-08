@@ -123,6 +123,26 @@ export default function Home() {
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       const text = await res.text()
       const items = parseXmlFeed(text)
+
+      // Try to load prices/stock from published offers.json
+      try {
+        const offersRes = await fetch('https://kaminhall-feed.vercel.app/offers.json?t=' + Date.now())
+        if (offersRes.ok) {
+          const offersData = await offersRes.json()
+          const offersMap = new Map(offersData.data.map((o: {code: string, price: number, old_price: number|null, stock: number, availability: boolean}) => [o.code, o]))
+          items.forEach((item) => {
+            const offer = offersMap.get(item.code)
+            if (offer) {
+              item.price = offer.price
+              item.old_price = offer.old_price
+              item.stock = offer.stock
+              item.availability = offer.availability
+              item.source = 'excel'
+            }
+          })
+        }
+      } catch { /* offers.json not available, skip */ }
+
       setCatalog(items)
     } catch (e) {
       setLoadError(`Помилка завантаження XML: ${e}`)
