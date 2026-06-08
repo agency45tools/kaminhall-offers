@@ -424,12 +424,13 @@ export default function Home() {
                   <td className="px-3 py-2">
                     <button
                       onClick={() => updateItem(item.code, 'availability', !item.availability)}
+                      disabled={item.stock === null}
                       className={`text-xs px-2 py-0.5 rounded-full border transition-colors
-                        ${item.availability
+                        ${(item.stock !== null && item.stock > 0)
                           ? 'bg-green-500/10 border-green-500/20 text-green-400'
                           : 'bg-red-500/10 border-red-500/20 text-red-400'}`}
                     >
-                      {item.availability ? 'Є' : 'Нема'}
+                      {(item.stock !== null && item.stock > 0) ? 'Є' : 'Нема'}
                     </button>
                   </td>
 
