@@ -278,16 +278,10 @@ export default function Home() {
           </button>
 
           <button
-            onClick={fetchXml}
+            onClick={() => { if (window.confirm('Ви впевнені що треба скинути XML файл? Подумай добре!\n\nВсі ціни та залишки будуть очищені.')) { fetchXml() } }}
             disabled={loading}
             className="text-sm px-3 py-1.5 rounded-lg border border-neutral-700 text-neutral-400 hover:border-neutral-500 transition-colors"
             title="Перезавантажити XML каталог"
-            onClick={(e) => {
-              e.preventDefault()
-              if (window.confirm('Ви впевнені що треба скинути XML файл? Подумай добре!\n\nВсі ціни та залишки будуть очищені.')) {
-                fetchXml()
-              }
-            }}
           >
             {loading ? '…' : '↻ XML'}
           </button>
