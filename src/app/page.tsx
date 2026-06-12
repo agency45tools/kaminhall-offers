@@ -23,6 +23,8 @@ const STORAGE_KEY = 'kaminhall_catalog_v1'
 function PasswordGate({ onAuth }: { onAuth: () => void }) {
   const [value, setValue] = useState('')
   const [error, setError] = useState(false)
+  const [transform, setTransform] = useState({ rotateX: 0, rotateY: 0 })
+  const containerRef = useRef<HTMLDivElement>(null)
 
   const submit = () => {
     if (value === APP_PASSWORD) {
@@ -35,12 +37,45 @@ function PasswordGate({ onAuth }: { onAuth: () => void }) {
     }
   }
 
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const rect = containerRef.current?.getBoundingClientRect()
+    if (!rect) return
+    const cx = rect.left + rect.width / 2
+    const cy = rect.top + rect.height / 2
+    const dx = (e.clientX - cx) / (rect.width / 2)
+    const dy = (e.clientY - cy) / (rect.height / 2)
+    setTransform({ rotateX: -dy * 12, rotateY: dx * 12 })
+  }
+
+  const handleMouseLeave = () => {
+    setTransform({ rotateX: 0, rotateY: 0 })
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#f5f5f7]">
+    <div
+      className="min-h-screen flex items-center justify-center bg-[#f5f5f7]"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className="w-80 space-y-4">
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-violet-100 mb-4">
-            <span className="text-2xl">🔥</span>
+        <div className="text-center mb-8">
+          <div
+            ref={containerRef}
+            className="inline-block mb-5"
+            style={{
+              perspective: '600px',
+              transform: `rotateX(${transform.rotateX}deg) rotateY(${transform.rotateY}deg)`,
+              transition: 'transform 0.1s ease-out',
+              transformStyle: 'preserve-3d',
+            }}
+          >
+            <img
+              src="/avatar.jpg"
+              alt="avatar"
+              className="w-28 h-28 rounded-full object-cover object-top shadow-xl border-4 border-white"
+              style={{ display: 'block' }}
+              draggable={false}
+            />
           </div>
           <div className="text-2xl font-bold text-gray-900 tracking-tight">КАМІНХОЛ</div>
           <div className="text-sm text-gray-400 mt-1">Управління пропозиціями</div>
