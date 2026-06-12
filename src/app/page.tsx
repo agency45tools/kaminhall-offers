@@ -78,6 +78,58 @@ function UploadBadge({ matched, total, vendor }: { matched: number; total: numbe
   )
 }
 
+// ─── Delivery Popup ──────────────────────────────────────────────────────────
+
+function DeliveryPopup({ code, methods, onUpdate }: {
+  code: string
+  methods: string[]
+  onUpdate: (updated: string[]) => void
+}) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [])
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className={`text-xs px-2 py-0.5 rounded-md border transition-colors
+          ${methods.length === 4
+            ? 'border-neutral-700 text-neutral-500 hover:border-neutral-600'
+            : 'border-amber-500/40 text-amber-400 bg-amber-500/10'}`}>
+        {methods.length}/4
+      </button>
+      {open && (
+        <div className="absolute left-0 top-8 z-50 bg-neutral-900 border border-neutral-700 rounded-xl p-3 shadow-2xl min-w-max">
+          {ALL_DELIVERY_METHODS.map((dm) => (
+            <label key={dm.method} className="flex items-center gap-2.5 text-xs text-neutral-400 py-1.5 cursor-pointer hover:text-white transition-colors">
+              <input
+                type="checkbox"
+                checked={methods.includes(dm.method)}
+                onChange={(e) => {
+                  const updated = e.target.checked
+                    ? [...methods, dm.method]
+                    : methods.filter((m) => m !== dm.method)
+                  onUpdate(updated)
+                }}
+                className="accent-violet-500"
+              />
+              {dm.label}
+            </label>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
 // ─── Main App ─────────────────────────────────────────────────────────────────
 
 export default function Home() {
@@ -372,29 +424,11 @@ export default function Home() {
                       </td>
 
                       <td className="px-4 py-3 whitespace-nowrap">
-                        <div className="relative group">
-                          <button className={`text-xs px-2 py-0.5 rounded-md border transition-colors
-                            ${(item.delivery_methods ?? DEFAULT_DELIVERY_METHODS).length === 4
-                              ? 'border-neutral-700 text-neutral-500 hover:border-neutral-600'
-                              : 'border-amber-500/40 text-amber-400 bg-amber-500/10'}`}>
-                            {(item.delivery_methods ?? DEFAULT_DELIVERY_METHODS).length}/4
-                          </button>
-                          <div className="absolute left-0 top-8 z-50 hidden group-hover:block bg-neutral-900 border border-neutral-700 rounded-xl p-3 shadow-2xl min-w-max">
-                            {ALL_DELIVERY_METHODS.map((dm) => (
-                              <label key={dm.method} className="flex items-center gap-2.5 text-xs text-neutral-400 py-1.5 cursor-pointer hover:text-white transition-colors">
-                                <input type="checkbox"
-                                  checked={(item.delivery_methods ?? DEFAULT_DELIVERY_METHODS).includes(dm.method)}
-                                  onChange={(e) => {
-                                    const current = item.delivery_methods ?? DEFAULT_DELIVERY_METHODS
-                                    const updated = e.target.checked ? [...current, dm.method] : current.filter((m: string) => m !== dm.method)
-                                    updateItem(item.code, 'delivery_methods', updated)
-                                  }}
-                                  className="accent-violet-500" />
-                                {dm.label}
-                              </label>
-                            ))}
-                          </div>
-                        </div>
+                        <DeliveryPopup
+                          code={item.code}
+                          methods={item.delivery_methods ?? DEFAULT_DELIVERY_METHODS}
+                          onUpdate={(updated) => updateItem(item.code, 'delivery_methods', updated)}
+                        />
                       </td>
 
                       <td className="px-4 py-3 whitespace-nowrap">
