@@ -13,6 +13,8 @@ import {
   ExcelRow,
   ALL_DELIVERY_METHODS,
   DEFAULT_DELIVERY_METHODS,
+  ALL_DELIVERY_METHODS,
+  DEFAULT_DELIVERY_METHODS,
 } from '@/lib/catalog'
 
 const XML_FEED_URL = 'https://kaminhall-feed.vercel.app/content.xml'
@@ -361,7 +363,7 @@ export default function Home() {
           <table className="w-full text-sm border-collapse">
             <thead>
               <tr className="border-b border-neutral-800">
-                {['Код', 'Артикул', 'Бренд', 'Назва', 'Ціна', 'Акц. ціна', 'Залишок', 'Наявність', 'Дж.'].map((h) => (
+                {['Код', 'Артикул', 'Бренд', 'Назва', 'Ціна', 'Стара ціна', 'Залишок', 'Дні', 'Частини', 'Доставка', 'Наявність', 'Дж.'].map((h) => (
                   <th key={h} className="px-3 py-2.5 text-left text-xs font-medium text-neutral-500 whitespace-nowrap bg-neutral-900/80">
                     {h}
                   </th>
@@ -420,6 +422,58 @@ export default function Home() {
                       placeholder="—"
                       className="w-16 bg-transparent border-b border-neutral-700 focus:border-neutral-400 outline-none text-white text-right py-0.5 px-1"
                     />
+                  </td>
+
+                  {/* Editable: days_to_dispatch */}
+                  <td className="px-3 py-2 whitespace-nowrap">
+                    <input
+                      type="number"
+                      min="0"
+                      max="30"
+                      value={item.days_to_dispatch ?? 1}
+                      onChange={(e) => updateItem(item.code, 'days_to_dispatch', Number(e.target.value))}
+                      className="w-12 bg-transparent border-b border-neutral-700 focus:border-neutral-400 outline-none text-white text-right py-0.5 px-1"
+                    />
+                  </td>
+
+                  {/* Editable: max_pay_in_parts */}
+                  <td className="px-3 py-2 whitespace-nowrap">
+                    <input
+                      type="number"
+                      min="1"
+                      max="36"
+                      value={item.max_pay_in_parts ?? 12}
+                      onChange={(e) => updateItem(item.code, 'max_pay_in_parts', Number(e.target.value))}
+                      className="w-12 bg-transparent border-b border-neutral-700 focus:border-neutral-400 outline-none text-white text-right py-0.5 px-1"
+                    />
+                  </td>
+
+                  {/* Delivery methods popup */}
+                  <td className="px-3 py-2 whitespace-nowrap">
+                    <div className="relative group">
+                      <button className="text-xs px-2 py-0.5 rounded border border-neutral-700 text-neutral-400 hover:border-neutral-500">
+                        {(item.delivery_methods ?? DEFAULT_DELIVERY_METHODS).length}/4
+                      </button>
+                      <div className="absolute left-0 top-6 z-50 hidden group-hover:block bg-neutral-900 border border-neutral-700 rounded-lg p-2 shadow-xl min-w-max">
+                        {ALL_DELIVERY_METHODS.map((dm) => (
+                          <label key={dm.method} className="flex items-center gap-2 text-xs text-neutral-300 py-1 cursor-pointer hover:text-white">
+                            <input
+                              type="checkbox"
+                              checked={(item.delivery_methods ?? DEFAULT_DELIVERY_METHODS).includes(dm.method)}
+                              onChange={(e) => {
+                                const current = item.delivery_methods ?? DEFAULT_DELIVERY_METHODS
+                                const updated = e.target.checked
+                                  ? [...current, dm.method]
+                                  : current.filter((m: string) => m !== dm.method)
+                                updateItem(item.code, 'delivery_methods', updated)
+                              }}
+                              className="accent-white"
+                            />
+                            {dm.label}
+                          </label>
+                        ))}
+                      </div>
+                    </div>
                   </td>
 
                   {/* Editable: availability toggle */}
