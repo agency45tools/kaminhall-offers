@@ -61,7 +61,43 @@ function PasswordGate({ onAuth }: { onAuth: () => void }) {
         >
           Увійти
         </button>
+        <EscapeButton />
       </div>
+    </div>
+  )
+}
+
+function EscapeButton() {
+  const [pos, setPos] = useState({ x: 0, y: 0 })
+  const [moved, setMoved] = useState(false)
+  const btnRef = useRef<HTMLButtonElement>(null)
+
+  const escape = () => {
+    const maxX = 200
+    const maxY = 100
+    const newX = (Math.random() - 0.5) * maxX * 2
+    const newY = (Math.random() - 0.5) * maxY * 2
+    setPos({ x: newX, y: newY })
+    setMoved(true)
+  }
+
+  return (
+    <div className="relative flex justify-center" style={{ height: '48px' }}>
+      <button
+        ref={btnRef}
+        onMouseEnter={escape}
+        onClick={(e) => e.preventDefault()}
+        style={{
+          transform: `translate(${pos.x}px, ${pos.y}px)`,
+          transition: moved ? 'transform 0.15s ease-out' : 'none',
+          position: 'absolute',
+          whiteSpace: 'nowrap',
+          cursor: 'not-allowed',
+        }}
+        className="bg-emerald-100 text-emerald-700 border border-emerald-300 rounded-xl px-4 py-2.5 text-sm font-medium"
+      >
+        💰 Натиснути щоб отримати ЗП x2 в цьому місяці
+      </button>
     </div>
   )
 }
