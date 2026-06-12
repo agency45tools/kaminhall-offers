@@ -36,14 +36,14 @@ function PasswordGate({ onAuth }: { onAuth: () => void }) {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#09090f]">
+    <div className="min-h-screen flex items-center justify-center bg-[#f5f5f7]">
       <div className="w-80 space-y-4">
         <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-violet-600/20 border border-violet-500/30 mb-4">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-violet-100 mb-4">
             <span className="text-2xl">🔥</span>
           </div>
-          <div className="text-2xl font-bold text-white tracking-tight">КАМІНХОЛ</div>
-          <div className="text-sm text-neutral-500 mt-1">Управління пропозиціями</div>
+          <div className="text-2xl font-bold text-gray-900 tracking-tight">КАМІНХОЛ</div>
+          <div className="text-sm text-gray-400 mt-1">Управління пропозиціями</div>
         </div>
         <input
           type="password"
@@ -51,14 +51,14 @@ function PasswordGate({ onAuth }: { onAuth: () => void }) {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && submit()}
-          className={`w-full bg-neutral-900/80 border rounded-xl px-4 py-3 text-white outline-none transition-all
-            ${error ? 'border-red-500/70 bg-red-500/5' : 'border-neutral-800 focus:border-violet-500/50 focus:bg-neutral-900'}`}
+          className={`w-full bg-white border rounded-xl px-4 py-3 text-gray-900 outline-none transition-all shadow-sm
+            ${error ? 'border-red-400' : 'border-gray-200 focus:border-violet-400 focus:ring-2 focus:ring-violet-100'}`}
           autoFocus
         />
-        {error && <p className="text-red-400 text-sm text-center">Невірний пароль</p>}
+        {error && <p className="text-red-500 text-sm text-center">Невірний пароль</p>}
         <button
           onClick={submit}
-          className="w-full bg-violet-600 hover:bg-violet-500 text-white rounded-xl py-3 font-medium transition-colors"
+          className="w-full bg-violet-600 hover:bg-violet-700 text-white rounded-xl py-3 font-medium transition-colors shadow-sm"
         >
           Увійти
         </button>
@@ -71,17 +71,16 @@ function PasswordGate({ onAuth }: { onAuth: () => void }) {
 
 function UploadBadge({ matched, total, vendor }: { matched: number; total: number; vendor: string }) {
   return (
-    <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/20">
-      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block animate-pulse" />
+    <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-amber-50 text-amber-600 border border-amber-200 font-medium">
+      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block" />
       {vendor}: {matched}/{total}
     </span>
   )
 }
 
-// ─── Delivery Popup ──────────────────────────────────────────────────────────
+// ─── Delivery Popup ───────────────────────────────────────────────────────────
 
-function DeliveryPopup({ code, methods, onUpdate }: {
-  code: string
+function DeliveryPopup({ methods, onUpdate }: {
   methods: string[]
   onUpdate: (updated: string[]) => void
 }) {
@@ -100,16 +99,16 @@ function DeliveryPopup({ code, methods, onUpdate }: {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((v) => !v)}
-        className={`text-xs px-2 py-0.5 rounded-md border transition-colors
+        className={`text-xs px-2.5 py-1 rounded-lg border font-medium transition-colors
           ${methods.length === 4
-            ? 'border-neutral-700 text-neutral-500 hover:border-neutral-600'
-            : 'border-amber-500/40 text-amber-400 bg-amber-500/10'}`}>
+            ? 'border-gray-200 text-gray-500 bg-gray-50 hover:border-gray-300'
+            : 'border-amber-300 text-amber-600 bg-amber-50'}`}>
         {methods.length}/4
       </button>
       {open && (
-        <div className="absolute left-0 top-8 z-50 bg-neutral-900 border border-neutral-700 rounded-xl p-3 shadow-2xl min-w-max">
+        <div className="absolute left-0 top-8 z-50 bg-white border border-gray-200 rounded-xl p-3 shadow-xl min-w-max">
           {ALL_DELIVERY_METHODS.map((dm) => (
-            <label key={dm.method} className="flex items-center gap-2.5 text-xs text-neutral-400 py-1.5 cursor-pointer hover:text-white transition-colors">
+            <label key={dm.method} className="flex items-center gap-2.5 text-xs text-gray-600 py-1.5 cursor-pointer hover:text-gray-900 transition-colors">
               <input
                 type="checkbox"
                 checked={methods.includes(dm.method)}
@@ -119,7 +118,7 @@ function DeliveryPopup({ code, methods, onUpdate }: {
                     : methods.filter((m) => m !== dm.method)
                   onUpdate(updated)
                 }}
-                className="accent-violet-500"
+                className="accent-violet-600"
               />
               {dm.label}
             </label>
@@ -264,16 +263,17 @@ export default function Home() {
   if (!authed) return <PasswordGate onAuth={() => setAuthed(true)} />
 
   return (
-    <div className="min-h-screen bg-[#09090f] text-neutral-200">
+    <div className="min-h-screen bg-[#f5f5f7]">
       {/* Header */}
-      <div className="border-b border-neutral-800/60 bg-[#09090f]/95 backdrop-blur sticky top-0 z-40">
+      <div className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
         <div className="px-6 py-4 flex items-center justify-between gap-4 flex-wrap">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-violet-600/20 border border-violet-500/30 flex items-center justify-center text-base">🔥</div>
+            <div className="w-9 h-9 rounded-xl bg-violet-100 flex items-center justify-center text-lg">🔥</div>
             <div>
-              <div className="text-base font-semibold text-white leading-tight">КАМІНХОЛ</div>
-              <div className="text-xs text-neutral-500 leading-tight">
-                {catalog.length} товарів · <span className="text-violet-400">{withPriceCount} з цінами</span> · {changedCount > 0 && <span className="text-amber-400">{changedCount} змінено</span>}
+              <div className="text-base font-bold text-gray-900 leading-tight tracking-tight">КАМІНХОЛ</div>
+              <div className="text-xs text-gray-400 leading-tight">
+                {catalog.length} товарів · <span className="text-violet-600 font-medium">{withPriceCount} з цінами</span>
+                {changedCount > 0 && <> · <span className="text-amber-500 font-medium">{changedCount} змінено</span></>}
               </div>
             </div>
           </div>
@@ -287,38 +287,38 @@ export default function Home() {
               onChange={(e) => { const f = e.target.files?.[0]; if (f) handleExcelUpload(f, 'weber'); e.target.value = '' }} />
 
             <button onClick={() => bkInputRef.current?.click()}
-              className="text-xs px-3 py-1.5 rounded-lg border border-neutral-700 text-neutral-400 hover:border-orange-500/50 hover:text-orange-400 transition-colors flex items-center gap-1.5">
-              <span className="text-orange-500">▲</span> Broil King
+              className="text-xs px-3 py-2 rounded-lg border border-gray-200 text-gray-600 bg-white hover:border-orange-300 hover:text-orange-600 hover:bg-orange-50 transition-colors shadow-sm font-medium flex items-center gap-1.5">
+              <span className="text-orange-500">↑</span> Broil King
             </button>
             <button onClick={() => weberInputRef.current?.click()}
-              className="text-xs px-3 py-1.5 rounded-lg border border-neutral-700 text-neutral-400 hover:border-blue-500/50 hover:text-blue-400 transition-colors flex items-center gap-1.5">
-              <span className="text-blue-500">▲</span> Weber
+              className="text-xs px-3 py-2 rounded-lg border border-gray-200 text-gray-600 bg-white hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50 transition-colors shadow-sm font-medium flex items-center gap-1.5">
+              <span className="text-blue-500">↑</span> Weber
             </button>
             <button
-              onClick={() => { if (window.confirm('Ви впевнені що треба скинути XML файл? Подумай добре!\n\nВсі ціни та залишки будуть очищені.')) { fetchXml() } }}
+              onClick={() => { if (window.confirm('Ви впевнені що треба скинути XML файл?\n\nВсі ціни та залишки будуть очищені.')) { fetchXml() } }}
               disabled={loading}
-              className="text-xs px-3 py-1.5 rounded-lg border border-neutral-700 text-neutral-500 hover:border-neutral-500 hover:text-neutral-300 transition-colors">
+              className="text-xs px-3 py-2 rounded-lg border border-gray-200 text-gray-500 bg-white hover:border-gray-300 hover:text-gray-700 transition-colors shadow-sm font-medium">
               {loading ? '…' : '↻ XML'}
             </button>
             <button
               onClick={handlePublish}
               disabled={publishing || withPriceCount === 0}
-              className="text-xs px-4 py-1.5 rounded-lg bg-violet-600 hover:bg-violet-500 text-white font-medium disabled:opacity-40 disabled:cursor-not-allowed transition-colors">
+              className="text-xs px-4 py-2 rounded-lg bg-violet-600 hover:bg-violet-700 text-white font-semibold disabled:opacity-40 disabled:cursor-not-allowed transition-colors shadow-sm">
               {publishing ? 'Публікую…' : `Опублікувати (${withPriceCount})`}
             </button>
           </div>
         </div>
       </div>
 
-      <div className="px-6 py-4">
+      <div className="px-6 py-5">
         {/* Alerts */}
         {loadError && (
-          <div className="mb-4 px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">{loadError}</div>
+          <div className="mb-4 px-4 py-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm">{loadError}</div>
         )}
         {publishResult && (
           <div className={`mb-4 px-4 py-3 rounded-xl text-sm border flex items-center justify-between
-            ${publishResult.ok ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400' : 'bg-red-500/10 border-red-500/20 text-red-400'}`}>
-            <span>{publishResult.msg}</span>
+            ${publishResult.ok ? 'bg-emerald-50 border-emerald-200 text-emerald-700' : 'bg-red-50 border-red-200 text-red-600'}`}>
+            <span className="font-medium">{publishResult.msg}</span>
             <button onClick={() => setPublishResult(null)} className="ml-4 opacity-50 hover:opacity-100 text-lg leading-none">×</button>
           </div>
         )}
@@ -326,123 +326,123 @@ export default function Home() {
         {/* Filters */}
         <div className="flex items-center gap-3 mb-4 flex-wrap">
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-600 text-sm">⌕</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">⌕</span>
             <input
               type="text"
               placeholder="Пошук за назвою, кодом, артикулом…"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="bg-neutral-900 border border-neutral-800 rounded-xl pl-8 pr-4 py-2 text-sm text-white outline-none focus:border-violet-500/50 w-72 transition-colors"
+              className="bg-white border border-gray-200 rounded-xl pl-8 pr-4 py-2 text-sm text-gray-900 outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100 w-72 transition-all shadow-sm"
             />
           </div>
-          <div className="flex rounded-xl border border-neutral-800 overflow-hidden">
+          <div className="flex rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm">
             {(['all', 'Broil King', 'Weber'] as const).map((b) => (
               <button key={b}
                 onClick={() => setFilterBrand(b)}
-                className={`text-xs px-3 py-2 transition-colors ${filterBrand === b ? 'bg-violet-600/20 text-violet-300' : 'text-neutral-500 hover:text-neutral-300'}`}>
-                {b === 'all' ? 'Всі' : b === 'Broil King' ? 'BK' : 'W'}
+                className={`text-xs px-4 py-2 font-medium transition-colors
+                  ${filterBrand === b ? 'bg-violet-600 text-white' : 'text-gray-500 hover:text-gray-800 hover:bg-gray-50'}`}>
+                {b === 'all' ? 'Всі' : b === 'Broil King' ? 'Broil King' : 'Weber'}
               </button>
             ))}
           </div>
-          <label className="flex items-center gap-2 text-xs text-neutral-500 cursor-pointer select-none hover:text-neutral-300 transition-colors">
-            <input type="checkbox" checked={filterChanged} onChange={(e) => setFilterChanged(e.target.checked)} className="accent-violet-500" />
-            Змінені
+          <label className="flex items-center gap-2 text-xs text-gray-500 cursor-pointer select-none hover:text-gray-700 transition-colors font-medium">
+            <input type="checkbox" checked={filterChanged} onChange={(e) => setFilterChanged(e.target.checked)} className="accent-violet-600" />
+            Тільки змінені
           </label>
-          <span className="text-xs text-neutral-700">{filtered.length} / {catalog.length}</span>
+          <span className="text-xs text-gray-400">{filtered.length} / {catalog.length}</span>
         </div>
 
         {/* Table */}
         {loading ? (
-          <div className="text-center text-neutral-600 py-24 text-sm">Завантаження каталогу…</div>
+          <div className="text-center text-gray-400 py-24 text-sm">Завантаження каталогу…</div>
         ) : catalog.length === 0 ? (
-          <div className="text-center text-neutral-600 py-24">
+          <div className="text-center text-gray-400 py-24">
             <p className="mb-3">Каталог порожній</p>
-            <button onClick={fetchXml} className="text-sm text-violet-400 hover:text-violet-300 underline">Завантажити XML</button>
+            <button onClick={fetchXml} className="text-sm text-violet-600 hover:text-violet-700 font-medium underline">Завантажити XML</button>
           </div>
         ) : (
-          <div className="rounded-2xl border border-neutral-800/80 overflow-hidden">
+          <div className="rounded-2xl border border-gray-200 overflow-hidden shadow-sm bg-white">
             <div className="overflow-x-auto">
               <table className="w-full text-sm border-collapse">
                 <thead>
-                  <tr className="border-b border-neutral-800">
+                  <tr className="border-b border-gray-100 bg-gray-50">
                     {['Код', 'Артикул', 'Бренд', 'Назва', 'Ціна', 'Стара ціна', 'Залишок', 'Дні', 'Частини', 'Доставка', 'Наявність', 'Дж.'].map((h) => (
-                      <th key={h} className="px-4 py-3 text-left text-xs font-medium text-neutral-600 whitespace-nowrap bg-neutral-900/60 uppercase tracking-wider">
+                      <th key={h} className="px-4 py-3 text-left text-xs font-semibold text-gray-400 whitespace-nowrap uppercase tracking-wider">
                         {h}
                       </th>
                     ))}
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-neutral-800/50">
+                <tbody className="divide-y divide-gray-100">
                   {filtered.map((item) => (
                     <tr key={item.code}
-                      className={`transition-colors hover:bg-neutral-800/20 ${item.changed ? 'bg-amber-500/5 border-l-2 border-l-amber-500/40' : ''}`}>
+                      className={`transition-colors hover:bg-gray-50 ${item.changed ? 'bg-amber-50/60 border-l-2 border-l-amber-400' : ''}`}>
 
-                      <td className="px-4 py-3 font-mono text-xs text-neutral-500 whitespace-nowrap">{item.code}</td>
-                      <td className="px-4 py-3 font-mono text-xs text-neutral-600 whitespace-nowrap">{item.vendor_code}</td>
+                      <td className="px-4 py-3 font-mono text-xs text-gray-400 whitespace-nowrap">{item.code}</td>
+                      <td className="px-4 py-3 font-mono text-xs text-gray-300 whitespace-nowrap">{item.vendor_code}</td>
 
                       <td className="px-4 py-3 whitespace-nowrap">
-                        <span className={`text-xs font-medium px-2 py-0.5 rounded-md
+                        <span className={`text-xs font-semibold px-2.5 py-1 rounded-lg
                           ${item.brand === 'Broil King'
-                            ? 'bg-orange-500/15 text-orange-400 ring-1 ring-orange-500/20'
-                            : 'bg-blue-500/15 text-blue-400 ring-1 ring-blue-500/20'}`}>
+                            ? 'bg-orange-100 text-orange-600'
+                            : 'bg-blue-100 text-blue-600'}`}>
                           {item.brand === 'Broil King' ? 'BK' : 'W'}
                         </span>
                       </td>
 
-                      <td className="px-4 py-3 text-neutral-200 max-w-xs">
-                        <span className="block truncate text-sm" title={item.title}>{item.title}</span>
+                      <td className="px-4 py-3 text-gray-800 max-w-xs">
+                        <span className="block truncate text-sm font-medium" title={item.title}>{item.title}</span>
                       </td>
 
                       <td className="px-4 py-3 whitespace-nowrap">
                         <input type="number" value={item.price ?? ''} placeholder="—"
                           onChange={(e) => updateItem(item.code, 'price', e.target.value ? Number(e.target.value) : null)}
-                          className="w-24 bg-transparent border-b border-neutral-800 focus:border-violet-500/60 outline-none text-white text-right py-0.5 text-sm transition-colors" />
+                          className="w-24 bg-transparent border-b-2 border-gray-200 focus:border-violet-400 outline-none text-gray-900 text-right py-0.5 text-sm font-medium transition-colors" />
                       </td>
 
                       <td className="px-4 py-3 whitespace-nowrap">
                         <input type="number" value={item.old_price ?? ''} placeholder="—"
                           onChange={(e) => updateItem(item.code, 'old_price', e.target.value ? Number(e.target.value) : null)}
-                          className="w-24 bg-transparent border-b border-neutral-800 focus:border-violet-500/60 outline-none text-neutral-500 text-right py-0.5 text-sm transition-colors" />
+                          className="w-24 bg-transparent border-b-2 border-gray-200 focus:border-violet-400 outline-none text-gray-400 text-right py-0.5 text-sm transition-colors" />
                       </td>
 
                       <td className="px-4 py-3 whitespace-nowrap">
                         <input type="number" value={item.stock ?? ''} placeholder="—"
                           onChange={(e) => updateItem(item.code, 'stock', e.target.value ? Number(e.target.value) : null)}
-                          className="w-16 bg-transparent border-b border-neutral-800 focus:border-violet-500/60 outline-none text-white text-right py-0.5 text-sm transition-colors" />
+                          className="w-16 bg-transparent border-b-2 border-gray-200 focus:border-violet-400 outline-none text-gray-900 text-right py-0.5 text-sm font-medium transition-colors" />
                       </td>
 
                       <td className="px-4 py-3 whitespace-nowrap">
                         <input type="number" min="0" max="30" value={item.days_to_dispatch ?? 1}
                           onChange={(e) => updateItem(item.code, 'days_to_dispatch', Number(e.target.value))}
-                          className="w-12 bg-transparent border-b border-neutral-800 focus:border-violet-500/60 outline-none text-white text-right py-0.5 text-sm transition-colors" />
+                          className="w-12 bg-transparent border-b-2 border-gray-200 focus:border-violet-400 outline-none text-gray-900 text-right py-0.5 text-sm font-medium transition-colors" />
                       </td>
 
                       <td className="px-4 py-3 whitespace-nowrap">
                         <input type="number" min="1" max="36" value={item.max_pay_in_parts ?? 12}
                           onChange={(e) => updateItem(item.code, 'max_pay_in_parts', Number(e.target.value))}
-                          className="w-12 bg-transparent border-b border-neutral-800 focus:border-violet-500/60 outline-none text-white text-right py-0.5 text-sm transition-colors" />
+                          className="w-12 bg-transparent border-b-2 border-gray-200 focus:border-violet-400 outline-none text-gray-900 text-right py-0.5 text-sm font-medium transition-colors" />
                       </td>
 
                       <td className="px-4 py-3 whitespace-nowrap">
                         <DeliveryPopup
-                          code={item.code}
                           methods={item.delivery_methods ?? DEFAULT_DELIVERY_METHODS}
                           onUpdate={(updated) => updateItem(item.code, 'delivery_methods', updated)}
                         />
                       </td>
 
                       <td className="px-4 py-3 whitespace-nowrap">
-                        <span className={`text-xs font-medium px-2.5 py-1 rounded-md
+                        <span className={`text-xs font-semibold px-2.5 py-1 rounded-lg
                           ${(item.stock !== null && item.stock > 0)
-                            ? 'bg-emerald-500/15 text-emerald-400 ring-1 ring-emerald-500/20'
-                            : 'bg-red-500/15 text-red-400 ring-1 ring-red-500/20'}`}>
+                            ? 'bg-emerald-100 text-emerald-700'
+                            : 'bg-red-100 text-red-600'}`}>
                           {(item.stock !== null && item.stock > 0) ? 'Є' : 'Нема'}
                         </span>
                       </td>
 
                       <td className="px-4 py-3 text-center">
-                        {item.source === 'excel' && <span className="text-xs text-amber-500 font-medium" title="З Excel">E</span>}
-                        {item.source === 'manual' && <span className="text-xs text-violet-400 font-medium" title="Ручне">M</span>}
+                        {item.source === 'excel' && <span className="text-xs text-amber-500 font-bold" title="З Excel">E</span>}
+                        {item.source === 'manual' && <span className="text-xs text-violet-500 font-bold" title="Ручне">M</span>}
                       </td>
                     </tr>
                   ))}
@@ -452,7 +452,7 @@ export default function Home() {
           </div>
         )}
 
-        <div className="mt-6 text-xs text-neutral-800 text-center">
+        <div className="mt-6 text-xs text-gray-300 text-center">
           Дані синхронізуються з offers.json · Публікація через GitHub API → Vercel
         </div>
       </div>
