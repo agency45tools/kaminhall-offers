@@ -13,8 +13,6 @@ import {
   ExcelRow,
   ALL_DELIVERY_METHODS,
   DEFAULT_DELIVERY_METHODS,
-  ALL_DELIVERY_METHODS,
-  DEFAULT_DELIVERY_METHODS,
 } from '@/lib/catalog'
 
 const XML_FEED_URL = 'https://kaminhall-feed.vercel.app/content.xml'
