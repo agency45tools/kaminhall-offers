@@ -11,6 +11,8 @@ import {
   generateOffersJson,
   formatPrice,
   ExcelRow,
+  ALL_DELIVERY_METHODS,
+  DEFAULT_DELIVERY_METHODS,
 } from '@/lib/catalog'
 
 const XML_FEED_URL = 'https://kaminhall-feed.vercel.app/content.xml'
@@ -123,27 +125,6 @@ export default function Home() {
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       const text = await res.text()
       const items = parseXmlFeed(text)
-
-      // Try to load prices/stock from published offers.json
-      try {
-        const offersRes = await fetch('https://kaminhall-feed.vercel.app/offers.json?t=' + Date.now())
-        if (offersRes.ok) {
-          const offersData = await offersRes.json()
-          type OfferEntry = {code: string, price: number, old_price: number|null, stock: number, availability: boolean}
-          const offersMap = new Map<string, OfferEntry>(offersData.data.map((o: OfferEntry) => [o.code, o]))
-          items.forEach((item) => {
-            const offer = offersMap.get(item.code)
-            if (offer) {
-              item.price = offer.price
-              item.old_price = offer.old_price
-              item.stock = offer.stock
-              item.availability = offer.availability
-              item.source = 'excel'
-            }
-          })
-        }
-      } catch { /* offers.json not available, skip */ }
-
       setCatalog(items)
     } catch (e) {
       setLoadError(`Помилка завантаження XML: ${e}`)
@@ -171,7 +152,7 @@ export default function Home() {
         excelRows = parseBroilKingExcel(rows as (string | number | null)[][])
       }
 
-      const { items, matchedCount } = mergeExcelIntoCatalog(catalog, excelRows, vendor)
+      const { items, matchedCount } = mergeExcelIntoCatalog(catalog, excelRows)
       setCatalog(items)
       setUploadStats((prev) => {
         const filtered = prev.filter((s) => s.vendor !== (vendor === 'weber' ? 'Weber' : 'Broil King'))
@@ -299,7 +280,7 @@ export default function Home() {
           </button>
 
           <button
-            onClick={() => { if (window.confirm('Ви впевнені що треба скинути XML файл? Подумай добре!\n\nВсі ціни та залишки будуть очищені.')) { fetchXml() } }}
+            onClick={fetchXml}
             disabled={loading}
             className="text-sm px-3 py-1.5 rounded-lg border border-neutral-700 text-neutral-400 hover:border-neutral-500 transition-colors"
             title="Перезавантажити XML каталог"
@@ -380,7 +361,7 @@ export default function Home() {
           <table className="w-full text-sm border-collapse">
             <thead>
               <tr className="border-b border-neutral-800">
-                {['Код', 'Артикул', 'Бренд', 'Назва', 'Ціна', 'Стара ціна', 'Залишок', 'Наявність', 'Дж.'].map((h) => (
+                {['Код', 'Артикул', 'Бренд', 'Назва', 'Ціна', 'Акц. ціна', 'Залишок', 'Наявність', 'Дж.'].map((h) => (
                   <th key={h} className="px-3 py-2.5 text-left text-xs font-medium text-neutral-500 whitespace-nowrap bg-neutral-900/80">
                     {h}
                   </th>
@@ -445,13 +426,12 @@ export default function Home() {
                   <td className="px-3 py-2">
                     <button
                       onClick={() => updateItem(item.code, 'availability', !item.availability)}
-                      disabled={item.stock === null}
                       className={`text-xs px-2 py-0.5 rounded-full border transition-colors
-                        ${(item.stock !== null && item.stock > 0)
+                        ${item.availability
                           ? 'bg-green-500/10 border-green-500/20 text-green-400'
                           : 'bg-red-500/10 border-red-500/20 text-red-400'}`}
                     >
-                      {(item.stock !== null && item.stock > 0) ? 'Є' : 'Нема'}
+                      {item.availability ? 'Є' : 'Нема'}
                     </button>
                   </td>
 

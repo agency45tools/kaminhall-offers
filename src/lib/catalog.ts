@@ -2,15 +2,24 @@
 
 export type Vendor = 'broil-king' | 'weber'
 
+export const ALL_DELIVERY_METHODS = [
+  { method: 'nova-post:branch', label: 'НП відділення' },
+  { method: 'nova-post:postomat', label: 'НП поштомат' },
+  { method: 'nova-post:cargo_branch', label: 'НП вантажне' },
+  { method: 'courier:nova-post', label: "Кур'єр НП" },
+]
+
+export const DEFAULT_DELIVERY_METHODS = ALL_DELIVERY_METHODS.map(m => m.method)
+
 export interface CatalogItem {
   // From XML
-  id: string          // <id> — internal XML id
-  code: string        // <code> — KEY for offers.json
-  vendor_code: string // <vendor_code> — KEY for Excel matching
+  id: string
+  code: string
+  vendor_code: string
   title: string
   brand: string
-  warranty_period: number   // parsed from <param name="Гарантія">
-  country_code: string      // parsed from <param name="Країна виробництва">
+  warranty_period: number
+  country_code: string
 
   // From Excel / manual edit
   price: number | null
@@ -18,8 +27,13 @@ export interface CatalogItem {
   stock: number | null
   availability: boolean
 
+  // Manually controlled
+  days_to_dispatch: number
+  max_pay_in_parts: number
+  delivery_methods: string[]
+
   // UI state
-  changed?: boolean   // highlighted after Excel upload
+  changed?: boolean
   source?: 'excel' | 'manual'
 }
 
@@ -96,6 +110,9 @@ export function parseXmlFeed(xmlText: string): CatalogItem[] {
       old_price: null,
       stock: null,
       availability: true,
+      days_to_dispatch: 1,
+      max_pay_in_parts: 12,
+      delivery_methods: DEFAULT_DELIVERY_METHODS,
     })
   })
 
@@ -149,9 +166,10 @@ export function parseWeberExcel(rows: (string | number | null)[][]): ExcelRow[] 
 /**
  * Parse Broil King XLS:
  * Rows 0-1: empty
- * Row 2: headers (Артикул | Номенклатура | Группа верхняя | Единица хранения | Роздрібний з ПДВ постійний | stock)
+ * Row 2: headers (Артикул | Номенклатура | Группа верхняя | Единица хранения | Залишок | Ціна)
  * Row 3: empty divider
  * Rows 4+: data — filter by brand col[2] === 'Broil King'
+ * NOTE: col[4] = залишок, col[5] = ціна (назва колонки оманлива)
  */
 export function parseBroilKingExcel(rows: (string | number | null)[][]): ExcelRow[] {
   const result: ExcelRow[] = []
@@ -161,10 +179,11 @@ export function parseBroilKingExcel(rows: (string | number | null)[][]): ExcelRo
     const vendorCode = row[0]
     const brand = String(row[2] ?? '').trim()
 
-    // Only Broil King products (skip Big Green Egg etc.)
+    // Only Broil King products (skip Big Green Egg, Cape Herb etc.)
     if (brand !== 'Broil King') continue
     if (!vendorCode || String(vendorCode).trim() === '') continue
 
+    // col[4] = залишок, col[5] = ціна (колонки переплутані в заголовку)
     const stockRaw = row[4]
     const priceRaw = row[5]
 
@@ -190,30 +209,16 @@ export function parseBroilKingExcel(rows: (string | number | null)[][]): ExcelRo
  */
 export function mergeExcelIntoCatalog(
   catalog: CatalogItem[],
-  excelRows: ExcelRow[],
-  vendor: 'broil-king' | 'weber'
+  excelRows: ExcelRow[]
 ): { items: CatalogItem[]; matchedCount: number; unmatchedCodes: string[] } {
   const excelMap = new Map<string, ExcelRow>()
   excelRows.forEach((r) => excelMap.set(String(r.vendor_code), r))
 
-  const brandName = vendor === 'broil-king' ? 'Broil King' : 'Weber'
   const unmatchedCodes: string[] = []
   let matchedCount = 0
 
   const items = catalog.map((item) => {
     const match = excelMap.get(item.vendor_code)
-
-    // If item belongs to this brand but not in Excel — zero out stock
-    if (!match && item.brand === brandName) {
-      const changed = item.stock !== 0 || item.price !== null
-      return {
-        ...item,
-        stock: 0,
-        availability: false,
-        changed,
-      }
-    }
-
     if (!match) return { ...item, changed: false }
 
     matchedCount++
@@ -246,15 +251,6 @@ export function mergeExcelIntoCatalog(
 
 export function generateOffersJson(catalog: CatalogItem[]): OffersJson {
   const WAREHOUSE_ID = 'WH-01'
-  const MAX_PAY_IN_PARTS = 12
-  const DAYS_TO_DISPATCH = 1
-
-  const DELIVERY_METHODS = [
-    { method: 'nova-post:branch', price: 0 },
-    { method: 'nova-post:postomat', price: 0 },
-    { method: 'nova-post:cargo_branch', price: 0 },
-    { method: 'courier:nova-post', price: 0 },
-  ]
 
   // Only include items that have price set
   const activeItems = catalog.filter((item) => item.price !== null && item.price > 0)
@@ -263,13 +259,13 @@ export function generateOffersJson(catalog: CatalogItem[]): OffersJson {
     code: item.code,
     price: Math.round(item.price!),
     old_price: item.old_price ? Math.round(item.old_price) : null,
-    availability: item.availability && (item.stock ?? 0) > 0,
+    availability: item.stock !== null && item.stock > 0,
     stock: item.stock ?? 0,
     warranty_type: 'manufacturer',
     warranty_period: item.warranty_period,
-    days_to_dispatch: DAYS_TO_DISPATCH,
-    max_pay_in_parts: MAX_PAY_IN_PARTS,
-    delivery_methods: DELIVERY_METHODS,
+    days_to_dispatch: item.days_to_dispatch ?? 1,
+    max_pay_in_parts: item.max_pay_in_parts ?? 12,
+    delivery_methods: (item.delivery_methods ?? DEFAULT_DELIVERY_METHODS).map(m => ({ method: m, price: 0 })),
     manufacture: item.country_code
       ? { country_code: item.country_code, year: null }
       : null,
