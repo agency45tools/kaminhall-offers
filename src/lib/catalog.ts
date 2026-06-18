@@ -174,27 +174,36 @@ export function parseWeberExcel(rows: (string | number | null)[][]): ExcelRow[] 
 export function parseBroilKingExcel(rows: (string | number | null)[][]): ExcelRow[] {
   const result: ExcelRow[] = []
 
-  for (let i = 7; i < rows.length; i++) {
+  let brandCol = 5
+  for (let i = 0; i < Math.min(15, rows.length); i++) {
+    for (let j = 0; j < rows[i].length; j++) {
+      const v = String(rows[i][j] ?? '')
+      if (v === 'Broil King' || v === 'Big Green Egg') { brandCol = j; break }
+    }
+  }
+
+  for (let i = 0; i < rows.length; i++) {
     const row = rows[i]
     const vendorCode = row[0]
-    const brand = String(row[5] ?? '').trim()
-
-    // Only Broil King products (skip Big Green Egg, Cape Herb etc.)
+    const brand = String(row[brandCol] ?? '').trim()
     if (brand !== 'Broil King') continue
     if (!vendorCode || String(vendorCode).trim() === '') continue
 
-    // col[4] = залишок, col[5] = ціна (колонки переплутані в заголовку)
-    const stockRaw = row[4]
-    const priceRaw = row[5]
+    const numVals: number[] = []
+    for (let j = brandCol + 1; j < row.length; j++) {
+      const v = row[j]
+      if (typeof v === 'number' && !isNaN(v) && v > 0) numVals.push(v)
+    }
+    if (numVals.length < 1) continue
 
-    const price = typeof priceRaw === 'number' ? priceRaw : parseFloat(String(priceRaw ?? '0'))
-    if (!price) continue
+    const price = Math.max(...numVals)
+    const stock = numVals.length >= 2 ? Math.min(...numVals) : 0
 
     result.push({
       vendor_code: String(vendorCode).trim(),
       price: Math.round(price),
       old_price: null,
-      stock: typeof stockRaw === 'number' ? Math.round(stockRaw) : parseInt(String(stockRaw ?? '0')) || 0,
+      stock: Math.round(stock),
     })
   }
 
