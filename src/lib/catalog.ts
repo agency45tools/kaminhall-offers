@@ -174,10 +174,10 @@ export function parseWeberExcel(rows: (string | number | null)[][]): ExcelRow[] 
 export function parseBroilKingExcel(rows: (string | number | null)[][]): ExcelRow[] {
   const result: ExcelRow[] = []
 
-  for (let i = 4; i < rows.length; i++) {
+  for (let i = 7; i < rows.length; i++) {
     const row = rows[i]
     const vendorCode = row[0]
-    const brand = String(row[2] ?? '').trim()
+    const brand = String(row[5] ?? '').trim()
 
     // Only Broil King products (skip Big Green Egg, Cape Herb etc.)
     if (brand !== 'Broil King') continue
